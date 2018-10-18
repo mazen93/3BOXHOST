@@ -1,0 +1,22 @@
+PODS:
+  - SDWebImage (4.4.2):
+    - SDWebImage/Core (= 4.4.2)
+  - SDWebImage/Core (4.4.2)
+  - SwiftyAvatar (1.1.3)
+
+DEPENDENCIES:
+  - SDWebImage (~> 4.0)
+  - SwiftyAvatar (~> 1.1)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - SDWebImage
+    - SwiftyAvatar
+
+SPEC CHECKSUMS:
+  SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
+  SwiftyAvatar: 33aecda825c91851cac2aabd06b33f3698b2414c
+
+PODFILE CHECKSUM: 944330389b71b1b9b4fd2cfb1e36393e83fbe8d6
+
+COCOAPODS: 1.5.3

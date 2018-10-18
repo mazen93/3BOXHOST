@@ -1,0 +1,6 @@
+framework module Pods_3BOXHOST {
+  umbrella header "Pods-3BOXHOST-umbrella.h"
+
+  export *
+  module * { export * }
+}
