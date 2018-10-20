@@ -62,10 +62,10 @@ class OrderVC: UIViewController,UITextFieldDelegate {
     
     
     func addObservice()  {
-        NotificationCenter.default.addObserver(forName: NSNotification.Name.UIKeyboardWillShow, object: nil, queue: nil) { (notification) in
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: nil) { (notification) in
             self.keyboardWillShow(notification: notification as NSNotification)
         }
-        NotificationCenter.default.addObserver(forName: NSNotification.Name.UIKeyboardWillHide, object: nil, queue: nil) { (notification) in
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: nil) { (notification) in
             self.keyboardWillHide(notification: notification as NSNotification)
         }
     }
@@ -94,7 +94,7 @@ class OrderVC: UIViewController,UITextFieldDelegate {
     
    func keyboardWillShow(notification: NSNotification) {
     guard let userInfo=notification.userInfo,
-        let frame=(userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+        let frame=(userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
             return
     }
     let content=UIEdgeInsets(top: 0, left: 0, bottom: (frame.height), right: 0)

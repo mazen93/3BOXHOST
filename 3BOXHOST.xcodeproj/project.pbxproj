@@ -11,6 +11,8 @@
 		0415E9F22167DD190042AFD9 /* worksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415E9F12167DD190042AFD9 /* worksModel.swift */; };
 		0415E9F52167DE0C0042AFD9 /* worksCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415E9F42167DE0C0042AFD9 /* worksCell.swift */; };
 		041F385021675964004BA07E /* CallUS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041F384F21675964004BA07E /* CallUS.swift */; };
+		0427D406217A1DD60018B3D1 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0427D405217A1DD60018B3D1 /* HomeVC.swift */; };
+		0427D409217A1EDA0018B3D1 /* CallUsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0427D408217A1EDA0018B3D1 /* CallUsVC.swift */; };
 		0428A9522160AA2200D84892 /* UPCarouselFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428A9512160AA2100D84892 /* UPCarouselFlowLayout.swift */; };
 		04811901216BEB100050C033 /* TermAndCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04811900216BEB100050C033 /* TermAndCondition.swift */; };
 		04811903216BEB670050C033 /* PrivacyStatement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04811902216BEB670050C033 /* PrivacyStatement.swift */; };
@@ -26,6 +28,8 @@
 		049ABB692167F48D00CFF81F /* newsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049ABB682167F48D00CFF81F /* newsCell.swift */; };
 		049ABB6D2167FAF200CFF81F /* NewsDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049ABB6C2167FAF200CFF81F /* NewsDetailsVC.swift */; };
 		04A73A9E21610B4500E83912 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A73A9C21610B4500E83912 /* SWRevealViewController.m */; };
+		04CD82F8217A61270027DC01 /* ServiceDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CD82F7217A61270027DC01 /* ServiceDetailsVC.swift */; };
+		04CD82FC217A63AF0027DC01 /* ServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CD82FB217A63AF0027DC01 /* ServiceModel.swift */; };
 		04F158F7215FC1DC007BE6BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F158F6215FC1DC007BE6BE /* AppDelegate.swift */; };
 		04F158F9215FC1DC007BE6BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F158F8215FC1DC007BE6BE /* ViewController.swift */; };
 		04F158FC215FC1DC007BE6BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F158FA215FC1DC007BE6BE /* Main.storyboard */; };
@@ -41,6 +45,8 @@
 		0415E9F12167DD190042AFD9 /* worksModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = worksModel.swift; sourceTree = "<group>"; };
 		0415E9F42167DE0C0042AFD9 /* worksCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = worksCell.swift; sourceTree = "<group>"; };
 		041F384F21675964004BA07E /* CallUS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallUS.swift; sourceTree = "<group>"; };
+		0427D405217A1DD60018B3D1 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		0427D408217A1EDA0018B3D1 /* CallUsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallUsVC.swift; sourceTree = "<group>"; };
 		0428A9512160AA2100D84892 /* UPCarouselFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UPCarouselFlowLayout.swift; sourceTree = "<group>"; };
 		04811900216BEB100050C033 /* TermAndCondition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermAndCondition.swift; sourceTree = "<group>"; };
 		04811902216BEB670050C033 /* PrivacyStatement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyStatement.swift; sourceTree = "<group>"; };
@@ -58,6 +64,8 @@
 		04A73A9B21610B4400E83912 /* 3BOXHOST-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "3BOXHOST-Bridging-Header.h"; sourceTree = "<group>"; };
 		04A73A9C21610B4500E83912 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		04A73A9D21610B4500E83912 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		04CD82F7217A61270027DC01 /* ServiceDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailsVC.swift; sourceTree = "<group>"; };
+		04CD82FB217A63AF0027DC01 /* ServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceModel.swift; sourceTree = "<group>"; };
 		04F158F3215FC1DC007BE6BE /* 3BOXHOST.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 3BOXHOST.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04F158F6215FC1DC007BE6BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04F158F8215FC1DC007BE6BE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +98,7 @@
 				0415E9F12167DD190042AFD9 /* worksModel.swift */,
 				049ABB602167E4ED00CFF81F /* stoaryModel.swift */,
 				049ABB642167F41D00CFF81F /* newsModel.swift */,
+				04CD82FB217A63AF0027DC01 /* ServiceModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -107,6 +116,7 @@
 		041F384E21675948004BA07E /* Controll */ = {
 			isa = PBXGroup;
 			children = (
+				0427D407217A1EBE0018B3D1 /* CallUS */,
 				0494521B216D599800C91862 /* Team */,
 				048118FF216BEA190050C033 /* Privacy */,
 				04FACDF02168C0CB00F744A9 /* order */,
@@ -114,8 +124,17 @@
 				04FACDEE2168C09200F744A9 /* Service */,
 				04FACDED2168C07D00F744A9 /* MyWorks */,
 				041F384F21675964004BA07E /* CallUS.swift */,
+				0427D405217A1DD60018B3D1 /* HomeVC.swift */,
 			);
 			path = Controll;
+			sourceTree = "<group>";
+		};
+		0427D407217A1EBE0018B3D1 /* CallUS */ = {
+			isa = PBXGroup;
+			children = (
+				0427D408217A1EDA0018B3D1 /* CallUsVC.swift */,
+			);
+			path = CallUS;
 			sourceTree = "<group>";
 		};
 		048118FF216BEA190050C033 /* Privacy */ = {
@@ -173,6 +192,7 @@
 				04F15908215FC775007BE6BE /* CollectionCell.swift */,
 				04A73A9B21610B4400E83912 /* 3BOXHOST-Bridging-Header.h */,
 				04811904216BFBAD0050C033 /* TEST.swift */,
+				04CD82F7217A61270027DC01 /* ServiceDetailsVC.swift */,
 			);
 			path = 3BOXHOST;
 			sourceTree = "<group>";
@@ -261,7 +281,7 @@
 				TargetAttributes = {
 					04F158F2215FC1DC007BE6BE = {
 						CreatedOnToolsVersion = 9.4.1;
-						LastSwiftMigration = 0940;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -304,11 +324,13 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-3BOXHOST/Pods-3BOXHOST-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyAvatar/SwiftyAvatar.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageSlideshow.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyAvatar.framework",
 			);
@@ -351,7 +373,10 @@
 				0415E9F52167DE0C0042AFD9 /* worksCell.swift in Sources */,
 				04811903216BEB670050C033 /* PrivacyStatement.swift in Sources */,
 				0428A9522160AA2200D84892 /* UPCarouselFlowLayout.swift in Sources */,
+				0427D406217A1DD60018B3D1 /* HomeVC.swift in Sources */,
+				04CD82FC217A63AF0027DC01 /* ServiceModel.swift in Sources */,
 				049ABB5D2167E36000CFF81F /* stoaryCollectionView.swift in Sources */,
+				0427D409217A1EDA0018B3D1 /* CallUsVC.swift in Sources */,
 				049ABB632167F3C500CFF81F /* NewsVC.swift in Sources */,
 				049ABB652167F41D00CFF81F /* newsModel.swift in Sources */,
 				049ABB692167F48D00CFF81F /* newsCell.swift in Sources */,
@@ -365,6 +390,7 @@
 				04FACDF22168C0DE00F744A9 /* OrderVC.swift in Sources */,
 				0494521D216D59AF00C91862 /* TeamVC.swift in Sources */,
 				049ABB612167E4ED00CFF81F /* stoaryModel.swift in Sources */,
+				04CD82F8217A61270027DC01 /* ServiceDetailsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,7 +548,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "3BOXHOST/3BOXHOST-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -544,7 +570,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.smartfuture.-BOXHOST";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "3BOXHOST/3BOXHOST-Bridging-Header.h";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

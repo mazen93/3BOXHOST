@@ -7,14 +7,43 @@
 //
 
 import UIKit
-
+import SDWebImage
 class CollectionCell: UICollectionViewCell {
     
+    
+    
+    
+    var delegate:toOrder?
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var details: UITextView!
     @IBOutlet weak var orderButton: UIButton!
     
     
+    @IBAction func orderButton(_ sender: UIButton) {
+        
+        
+        delegate?.toOrderVC()
+    }
+    
+    
+    
+    func set(map:ServiceModel
+        )  {
+        
+        image.sd_setImage(with: URL(string: map.photo), placeholderImage: UIImage(named: "3box"))
+        
+        title.text=map.title
+        details.text=map.details
+        
+        
+        
+        
+    }
     
 }
+protocol toOrder {
+    func toOrderVC()
+    
+}
+
