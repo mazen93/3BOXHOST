@@ -9,9 +9,10 @@
 import UIKit
 
 class NewsVC: UIViewController ,UICollectionViewDelegate,UICollectionViewDataSource,MoreDelegate {
+    var name:String!
    
-  
     
+   
    
     
     let details="أصدرت شركة جوجل تطبيق Google Tez  في دولة الهند وهو يعمل على نظام تشغيل الأندرويد، ونظام  تشغيل IOS، كما أنه يتيح لمستخدمي هذا التطبيق  دفع النقود مباشرةً إلى الحسابات، مما يلغي نظام التعامل بالمحافظ التقليدية، كما  أنه يدعم العديد من اللغات الإنجليزية، المهاراتية، الغوجاراتية، الكانادا، التاميلية، التيلجو، البنغالية، الهندية"

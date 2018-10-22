@@ -36,6 +36,7 @@
 		04F158FE215FC1DE007BE6BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04F158FD215FC1DE007BE6BE /* Assets.xcassets */; };
 		04F15901215FC1DE007BE6BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F158FF215FC1DE007BE6BE /* LaunchScreen.storyboard */; };
 		04F15909215FC775007BE6BE /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F15908215FC775007BE6BE /* CollectionCell.swift */; };
+		04F7BF9A217CED1700682E66 /* AboutUS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F7BF99217CED1700682E66 /* AboutUS.swift */; };
 		04FACDF22168C0DE00F744A9 /* OrderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FACDF12168C0DE00F744A9 /* OrderVC.swift */; };
 		30EAFA36E5FBDC85DD757F9A /* Pods_3BOXHOST.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A546312E3B83342F137B934 /* Pods_3BOXHOST.framework */; };
 /* End PBXBuildFile section */
@@ -74,6 +75,7 @@
 		04F15900215FC1DE007BE6BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04F15902215FC1DE007BE6BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04F15908215FC775007BE6BE /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
+		04F7BF99217CED1700682E66 /* AboutUS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUS.swift; sourceTree = "<group>"; };
 		04FACDF12168C0DE00F744A9 /* OrderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderVC.swift; sourceTree = "<group>"; };
 		5A546312E3B83342F137B934 /* Pods_3BOXHOST.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_3BOXHOST.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA098A38DA5B4D3FD2F28A03 /* Pods-3BOXHOST.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-3BOXHOST.release.xcconfig"; path = "Pods/Target Support Files/Pods-3BOXHOST/Pods-3BOXHOST.release.xcconfig"; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				0427D408217A1EDA0018B3D1 /* CallUsVC.swift */,
+				04F7BF99217CED1700682E66 /* AboutUS.swift */,
 			);
 			path = CallUS;
 			sourceTree = "<group>";
@@ -375,6 +378,7 @@
 				0428A9522160AA2200D84892 /* UPCarouselFlowLayout.swift in Sources */,
 				0427D406217A1DD60018B3D1 /* HomeVC.swift in Sources */,
 				04CD82FC217A63AF0027DC01 /* ServiceModel.swift in Sources */,
+				04F7BF9A217CED1700682E66 /* AboutUS.swift in Sources */,
 				049ABB5D2167E36000CFF81F /* stoaryCollectionView.swift in Sources */,
 				0427D409217A1EDA0018B3D1 /* CallUsVC.swift in Sources */,
 				049ABB632167F3C500CFF81F /* NewsVC.swift in Sources */,

@@ -47,9 +47,14 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
        
         
         cell.set(map: array[indexPath.row])
+        cell.layer.cornerRadius=5
+        cell.layer.shadowColor=UIColor.white.cgColor
+        cell.layer.shadowOpacity=0.5
+        cell.layer.shadowOffset = .zero
+        cell.layer.shadowPath=UIBezierPath(rect: cell.layer.bounds).cgPath
+        cell.layer.shouldRasterize=true
+            
         
-        
-        cell.delegate=self
         return cell
     }
     //UIScrollView INT TO COUNT

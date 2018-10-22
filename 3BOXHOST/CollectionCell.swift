@@ -20,6 +20,19 @@ class CollectionCell: UICollectionViewCell {
     @IBOutlet weak var orderButton: UIButton!
     
     
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+//        DispatchQueue.main.async {
+//            <#code#>
+//        }
+        
+    }
+    
+    
+    
+    
     @IBAction func orderButton(_ sender: UIButton) {
         
         

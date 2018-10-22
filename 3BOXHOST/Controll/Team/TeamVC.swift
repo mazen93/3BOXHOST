@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TeamVC: UIViewController ,UICollectionViewDelegate,UICollectionViewDataSource{
+class TeamVC: UIViewController {
 //    func YTTapButton(url: String) {
 //         print("url\(url)")
 //    }
@@ -29,82 +29,228 @@ class TeamVC: UIViewController ,UICollectionViewDelegate,UICollectionViewDataSou
 //    }
     
     
+ 
+    @IBOutlet weak var dribbleImage: UIImageView!
+    @IBOutlet weak var dribbleImage1: UIImageView!
+    @IBOutlet weak var dribbleImage2: UIImageView!
+    @IBOutlet weak var dribbleImage3: UIImageView!
+    @IBOutlet weak var dribbleImage4: UIImageView!
+    @IBOutlet weak var dribbleImage5: UIImageView!
     
-    var array:[TeamsModel]=[]
     
     
-    @IBOutlet weak var collection: UICollectionView!
+    
+    
+
+    @IBOutlet weak var linkedInImage: UIImageView!
+    @IBOutlet weak var linkedInImage1: UIImageView!
+    @IBOutlet weak var linkedInImage2: UIImageView!
+    @IBOutlet weak var linkedInImage3: UIImageView!
+    @IBOutlet weak var linkedInImage4: UIImageView!
+    @IBOutlet weak var linkedInImage5: UIImageView!
+    
+    
+    @IBOutlet weak var behanceImage: UIImageView!
+    @IBOutlet weak var behanceImage1: UIImageView!
+    @IBOutlet weak var behanceImage2: UIImageView!
+    @IBOutlet weak var behanceImage3: UIImageView!
+    @IBOutlet weak var behanceImage4: UIImageView!
+    @IBOutlet weak var behanceImage5: UIImageView!
+    
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
-        collection.dataSource=self
-        collection.delegate=self
-        loadData()
-        
+     imageClickable()
     }
     
     
     
     
-    func loadData()  {
+    
+    func imageClickable() {
+        // linked
+        let tGesture = UITapGestureRecognizer(target: self, action: #selector(CallUsVC.linkedimageTapped(gesture:)))
+        
+        linkedInImage.addGestureRecognizer(tGesture)
+        linkedInImage.isUserInteractionEnabled = true
+        let tGesture1 = UITapGestureRecognizer(target: self, action: #selector(CallUsVC.linkedimageTapped(gesture:)))
+        
+        linkedInImage1.addGestureRecognizer(tGesture1)
+        linkedInImage1.isUserInteractionEnabled = true
         
         
-        let u=TeamsModel(name: "MOHAMED ELKAMASH", jop: "CEO", photo: "3box")
+        let tGesture2 = UITapGestureRecognizer(target: self, action: #selector(CallUsVC.linkedimageTapped(gesture:)))
         
-        self.array.append(u)
+        linkedInImage2.addGestureRecognizer(tGesture2)
+        linkedInImage2.isUserInteractionEnabled = true
         
+        let tGesture3 = UITapGestureRecognizer(target: self, action: #selector(CallUsVC.linkedimageTapped(gesture:)))
         
-        let ui=TeamsModel(name: "MOHAMED FATHY", jop: "Digital Marketing Specialist", photo: "3box")
-        self.array.append(ui)
-        
-        let ue=TeamsModel(name: "AHMED YOUSSEF", jop: "Motion Graphic Desginer", photo: "3box")
-        
-        self.array.append(ue)
+        linkedInImage3.addGestureRecognizer(tGesture3)
+        linkedInImage3.isUserInteractionEnabled = true
         
         
+        let tGesture4 = UITapGestureRecognizer(target: self, action: #selector(CallUsVC.linkedimageTapped(gesture:)))
         
-        let ma=TeamsModel(name: "ESLAM GOUDA", jop: "Full Stack Developer", photo: "3box")
-        self.array.append(ma)
+        linkedInImage4.addGestureRecognizer(tGesture4)
+        linkedInImage4.isUserInteractionEnabled = true
+        
+        let tGesture5 = UITapGestureRecognizer(target: self, action: #selector(CallUsVC.linkedimageTapped(gesture:)))
+        
+        linkedInImage5.addGestureRecognizer(tGesture5)
+        linkedInImage5.isUserInteractionEnabled = true
+      
         
         
-        let uer=TeamsModel(name: "HASSAN ALI", jop: "Graphic Desginer", photo: "3box")
         
-        self.array.append(uer)
-        let eer=TeamsModel(name: "MOHAMED MAZIN", jop: "Mobile Application Developer", photo: "3box")
+        // behance
+        let Gesture = UITapGestureRecognizer(target: self, action: #selector(CallUsVC.behanceimageTapped(gesture:)))
         
-        self.array.append(eer)
+        behanceImage.addGestureRecognizer(Gesture)
+        behanceImage.isUserInteractionEnabled = true
+        
+        
+        // behance
+        let Gesture1 = UITapGestureRecognizer(target: self, action: #selector(CallUsVC.behanceimageTapped(gesture:)))
+        
+        behanceImage1.addGestureRecognizer(Gesture1)
+        behanceImage1.isUserInteractionEnabled = true
+        
+        // behance
+        let Gesture2 = UITapGestureRecognizer(target: self, action: #selector(CallUsVC.behanceimageTapped(gesture:)))
+        
+        behanceImage2.addGestureRecognizer(Gesture2)
+        behanceImage2.isUserInteractionEnabled = true
+        
+        // behance
+        let Gesture3 = UITapGestureRecognizer(target: self, action: #selector(CallUsVC.behanceimageTapped(gesture:)))
+        
+        behanceImage3.addGestureRecognizer(Gesture3)
+        behanceImage3.isUserInteractionEnabled = true
+        // behance
+        let Gesture4 = UITapGestureRecognizer(target: self, action: #selector(CallUsVC.behanceimageTapped(gesture:)))
+        
+        behanceImage4.addGestureRecognizer(Gesture4)
+        behanceImage4.isUserInteractionEnabled = true
+        // behance
+        let Gesture5 = UITapGestureRecognizer(target: self, action: #selector(CallUsVC.behanceimageTapped(gesture:)))
+        
+        behanceImage5.addGestureRecognizer(Gesture5)
+        behanceImage5.isUserInteractionEnabled = true
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        // dribbler
+        let taGestu = UITapGestureRecognizer(target: self, action: #selector(CallUsVC.dribbleimageTapped(gesture:)))
+        
+        dribbleImage.addGestureRecognizer(taGestu)
+        dribbleImage.isUserInteractionEnabled = true
+        
+        
+        
+        
+        // dribbler
+        let taGestu1 = UITapGestureRecognizer(target: self, action: #selector(CallUsVC.dribbleimageTapped(gesture:)))
+        
+        
+        dribbleImage1.addGestureRecognizer(taGestu1)
+        dribbleImage1.isUserInteractionEnabled = true
+        
+        
+        
+        // dribbler
+        let taGestu2 = UITapGestureRecognizer(target: self, action: #selector(CallUsVC.dribbleimageTapped(gesture:)))
+        dribbleImage2.addGestureRecognizer(taGestu2)
+        dribbleImage2.isUserInteractionEnabled = true
+        
+        // dribbler
+        let taGestu3 = UITapGestureRecognizer(target: self, action: #selector(CallUsVC.dribbleimageTapped(gesture:)))
+        dribbleImage3.addGestureRecognizer(taGestu3)
+        dribbleImage3.isUserInteractionEnabled = true
+        
+        
+        // dribbler
+        let taGestu4 = UITapGestureRecognizer(target: self, action: #selector(CallUsVC.dribbleimageTapped(gesture:)))
+        dribbleImage4.addGestureRecognizer(taGestu4)
+        dribbleImage4.isUserInteractionEnabled = true
+        // dribbler
+        let taGestu5 = UITapGestureRecognizer(target: self, action: #selector(CallUsVC.dribbleimageTapped(gesture:)))
+        dribbleImage5.addGestureRecognizer(taGestu5)
+        dribbleImage5.isUserInteractionEnabled = true
+    }
+    @objc func behanceimageTapped(gesture: UIGestureRecognizer) {
+        // if the tapped view is a UIImageView then set it to imageview
+        if (gesture.view as? UIImageView) != nil {
+            print("Image Tapped")
+            //Here you can initiate your new ViewController
+            
+            let fbURL=URL(string: "https://www.behance.net/3boxsafb7d")
+            
+            if (UIApplication.shared.canOpenURL(fbURL!)){
+                //FB INSTALL
+                UIApplication.shared.open(fbURL!)
+            }else{
+                UIApplication.shared.canOpenURL(fbURL!)
+                
+            }
+            
+            
+            
+            
+        }
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return array.count
+    @objc func dribbleimageTapped(gesture: UIGestureRecognizer) {
+        // if the tapped view is a UIImageView then set it to imageview
+        if (gesture.view as? UIImageView) != nil {
+            print("Image Tapped")
+            //Here you can initiate your new ViewController
+            
+            
+            
+            //https://www.3boxhost.com
+            let fbURL=URL(string: "https://www.3boxhost.com")
+            
+            if (UIApplication.shared.canOpenURL(fbURL!)){
+                //FB INSTALL
+                UIApplication.shared.open(fbURL!)
+            }else{
+                UIApplication.shared.canOpenURL(fbURL!)
+                
+            }
+        }
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        
-        let cell=collectionView.dequeueReusableCell(withReuseIdentifier: "TeamCell", for: indexPath) as! TeamCell
-        
-//        
-//        cell.contentView.layer.cornerRadius = 2.0
-//        cell.contentView.layer.borderWidth = 1.0
-//        cell.contentView.layer.borderColor = UIColor.clear.cgColor
-//        cell.contentView.layer.masksToBounds = true
-//        
-//        cell.layer.shadowColor = UIColor.black.cgColor
-//        cell.layer.shadowOffset = CGSize(width: 0, height: 2.0)
-//        cell.layer.shadowRadius = 2.0
-//        cell.layer.shadowOpacity = 0.5
-//        cell.layer.masksToBounds = false
-//        cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius: cell.contentView.layer.cornerRadius).cgPath
-        
-        
-        cell.set(map:array[indexPath.row])
-        
-        
-        return cell
-    }
+        @objc func linkedimageTapped(gesture: UIGestureRecognizer) {
+            // if the tapped view is a UIImageView then set it to imageview
+            if (gesture.view as? UIImageView) != nil {
+                print("Image Tapped")
+                //Here you can initiate your new ViewController
+                let fbURL=URL(string: "https://www.linkedin.com/company/3boxhost")
+                
+                if (UIApplication.shared.canOpenURL(fbURL!)){
+                    //FB INSTALL
+                    UIApplication.shared.open(fbURL!)
+                }else{
+                    UIApplication.shared.canOpenURL(fbURL!)
+                    
+                }
+                
+            }
+        }
+
     
     
 }
