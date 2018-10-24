@@ -10,12 +10,12 @@ import Foundation
 class worksModel {
     
     var photo:String!
-    var title:String!
+ 
     var url:String!
     
-    init(photo:String,title:String,url:String) {
+    init(photo:String,url:String) {
         self.photo=photo
-        self.title=title
+        
         self.url=url
     }
     

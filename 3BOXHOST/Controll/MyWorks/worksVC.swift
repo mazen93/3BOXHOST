@@ -11,6 +11,16 @@ import UIKit
 class worksVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource ,seeProject{
     func ProjectURL(url: String) {
         print("url is \(url)")
+        let fbURL=URL(string: url)
+        
+        if (UIApplication.shared.canOpenURL(fbURL!)){
+            //FB INSTALL
+            UIApplication.shared.open(fbURL!)
+        }else{
+            UIApplication.shared.canOpenURL(fbURL!)
+            
+        }
+        
     }
     
     
@@ -36,25 +46,56 @@ class worksVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
     func loadData()  {
     
         
-        let u=worksModel(photo:"3box", title: "adeek", url: "adeeeeeeeeek")
+        
+        let mdars=worksModel(photo:"mdars", url: "https://www.behance.net/gallery/70037291/_")
+        
+        self.array.append(mdars)
+        
+        let asyoti=worksModel(photo:"mdars", url: "https://www.behance.net/gallery/69997545/-2018")
+        
+        self.array.append(asyoti)
+        
+        let zahra=worksModel(photo:"quran", url: "https://www.behance.net/gallery/70001253/Zahrat-Al-rawdah-Pharmacies")
+        
+        self.array.append(zahra)
+        
+        let farm=worksModel(photo:"quran", url: "https://www.behance.net/gallery/69997165/DoxPharma")
+        
+        self.array.append(farm)
+        
+        
+        
+        
+
+        let u=worksModel(photo:"quran", url: "https://www.behance.net/gallery/71573627/_")
         
         self.array.append(u)
         
         
-        let ui=worksModel(photo:"3box", title: "adeek", url: "adk")
+        let ui=worksModel(photo:"egy",  url: "https://www.behance.net/gallery/71573953/EGYTOWN")
         self.array.append(ui)
         
-        let ue=worksModel(photo:"3box", title: "adeek", url: "deeeeeeeeek")
+        let ue=worksModel(photo:"techno",  url: "https://www.behance.net/gallery/71574149/_")
         
         self.array.append(ue)
         
         
         
-        let ma=worksModel(photo:"3box", title: "adeek", url: "aeeeeeeeeek")
+        let ma=worksModel(photo:"bond",  url: "https://www.behance.net/gallery/71573291/_")
         self.array.append(ma)
-        let uer=worksModel(photo:"3box", title: "adeek", url: "ad")
+        let uer=worksModel(photo:"food", url: "https://www.behance.net/gallery/71573773/Hot-food")
         
         self.array.append(uer)
+        let r=worksModel(photo:"windos", url: "https://www.behance.net/gallery/71574279/_")
+        
+        self.array.append(r)
+        
+        let new=worksModel(photo:"new", url: "https://www.behance.net/gallery/71573437/_")
+        
+        self.array.append(new)
+        let areen=worksModel(photo:"areen", url: "https://www.behance.net/gallery/71574009/_")
+        
+        self.array.append(areen)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

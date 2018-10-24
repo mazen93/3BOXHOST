@@ -22,8 +22,10 @@ class worksCell: UICollectionViewCell {
     func set(map:worksModel)  {
      
         photo.sd_setImage(with: URL(string: map.photo), placeholderImage: UIImage(named: "3box"))
+        
+        
+        photo.image=UIImage(named: map.photo)
         urlLabel.text=map.url
-       // title.text=map.title
         
     }
     

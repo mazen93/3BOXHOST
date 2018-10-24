@@ -36,27 +36,27 @@ class HomeVC: UIViewController {
     func ImageClickabe() {
         
         
-        // facebook
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(CallUsVC.facebookimageTapped(gesture:)))
+        // CallUs
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(HomeVC.callusimageTapped(gesture:)))
         
-        about.addGestureRecognizer(tapGesture)
-        about.isUserInteractionEnabled = true
+        callus.addGestureRecognizer(tapGesture)
+        callus.isUserInteractionEnabled = true
         
-        // twitter
-        let taGesture = UITapGestureRecognizer(target: self, action: #selector(HomeVC.aboutimageTapped(gesture:)))
+        // service
+        let taGesture = UITapGestureRecognizer(target: self, action: #selector(HomeVC.serviceimageTapped(gesture:)))
         
         service.addGestureRecognizer(taGesture)
         service.isUserInteractionEnabled = true
         
         
         
-        // linked
+        // works
         let tGesture = UITapGestureRecognizer(target: self, action: #selector(HomeVC.workimageTapped(gesture:)))
         
         works.addGestureRecognizer(tGesture)
         works.isUserInteractionEnabled = true
         
-        // insta
+        // team
         let taGestur = UITapGestureRecognizer(target: self, action: #selector(HomeVC.teamimageTapped(gesture:)))
         
         team.addGestureRecognizer(taGestur)
@@ -64,20 +64,20 @@ class HomeVC: UIViewController {
         
         
         
-        // behance
+        // makeOrder
         let Gesture = UITapGestureRecognizer(target: self, action: #selector(HomeVC.makeOrderimageTapped(gesture:)))
         
         makeOrder.addGestureRecognizer(Gesture)
         makeOrder.isUserInteractionEnabled = true
         
-        // dribbler
+        // news
         let taGestu = UITapGestureRecognizer(target: self, action: #selector(HomeVC.newsimageTapped(gesture:)))
         
         news.addGestureRecognizer(taGestu)
         news.isUserInteractionEnabled = true
         
         
-        // youtube
+        // terms
         let taGest = UITapGestureRecognizer(target: self, action: #selector(HomeVC.termsimageTapped(gesture:)))
         
         terms.addGestureRecognizer(taGest)
@@ -87,35 +87,23 @@ class HomeVC: UIViewController {
         
         
         
-        // youtube
+        // privacy
         let taGet = UITapGestureRecognizer(target: self, action: #selector(HomeVC.privacyimageTapped(gesture:)))
         
         privacy.addGestureRecognizer(taGet)
         privacy.isUserInteractionEnabled = true
         
         // youtube
-        let taGes = UITapGestureRecognizer(target: self, action: #selector(HomeVC.callusimageTapped(gesture:)))
+        let taGes = UITapGestureRecognizer(target: self, action: #selector(HomeVC.aboutimageTapped(gesture:)))
         
-        callus.addGestureRecognizer(taGes)
-        callus.isUserInteractionEnabled = true
+        about.addGestureRecognizer(taGes)
+        about.isUserInteractionEnabled = true
     }
     
     
     @objc func aboutimageTapped(gesture: UIGestureRecognizer) {
         // if the tapped view is a UIImageView then set it to imageview
-        if (gesture.view as? UIImageView) != nil {
-            print("Image Tapped")
-            //Here you can initiate your new ViewController
-            let fbURL=URL(string: "https://www.facebook.com/3boxhost")
-            
-            if (UIApplication.shared.canOpenURL(fbURL!)){
-                //FB INSTALL
-                UIApplication.shared.open(fbURL!)
-            }else{
-                UIApplication.shared.canOpenURL(fbURL!)
-                
-            }
-        }
+       performSegue(withIdentifier: "about", sender: self)
     }
     
     
@@ -123,164 +111,48 @@ class HomeVC: UIViewController {
     
     @objc func termsimageTapped(gesture: UIGestureRecognizer) {
         // if the tapped view is a UIImageView then set it to imageview
-        if (gesture.view as? UIImageView) != nil {
-            print("Image Tapped")
-            //Here you can initiate your new ViewController
-            let fbURL=URL(string: "https://www.facebook.com/3boxhost")
-            
-            if (UIApplication.shared.canOpenURL(fbURL!)){
-                //FB INSTALL
-                UIApplication.shared.open(fbURL!)
-            }else{
-                UIApplication.shared.canOpenURL(fbURL!)
-                
-            }
-        }
+        performSegue(withIdentifier: "terms", sender: self)
     }
     
     @objc func privacyimageTapped(gesture: UIGestureRecognizer) {
-        // if the tapped view is a UIImageView then set it to imageview
-        if (gesture.view as? UIImageView) != nil {
-            print("Image Tapped")
-            //Here you can initiate your new ViewController
-            
-            
-            let fbURL=URL(string: "https://twitter.com/3boxhost")
-            
-            if (UIApplication.shared.canOpenURL(fbURL!)){
-                //FB INSTALL
-                UIApplication.shared.openURL(fbURL!)
-            }else{
-                UIApplication.shared.canOpenURL(fbURL!)
-                
-            }
-            
-        }
+    performSegue(withIdentifier: "privacy", sender: self)
     }
     @objc func callusimageTapped(gesture: UIGestureRecognizer) {
         // if the tapped view is a UIImageView then set it to imageview
-        if (gesture.view as? UIImageView) != nil {
-            print("Image Tapped")
-            //Here you can initiate your new ViewController
-            let fbURL=URL(string: "https://www.linkedin.com/company/3boxhost")
-            
-            if (UIApplication.shared.canOpenURL(fbURL!)){
-                //FB INSTALL
-                UIApplication.shared.open(fbURL!)
-            }else{
-                UIApplication.shared.canOpenURL(fbURL!)
-                
-            }
-            
-        }
+        performSegue(withIdentifier: "call", sender: self)
+
     }
     
-    @objc func aboutimageTapped(gesture: UIGestureRecognizer) {
-        // if the tapped view is a UIImageView then set it to imageview
-        if (gesture.view as? UIImageView) != nil {
-            //print("Image Tapped")
-            //Here you can initiate your new ViewController
-            
-            
-            let fbURL=URL(string: "https://www.youtube.com/channel/UCef_X-q7E7XiKfrqRqLVVNQ")
-            
-            
-            if (UIApplication.shared.canOpenURL(fbURL!)){
-                //FB INSTALL
-                UIApplication.shared.open(fbURL!)
-            }else{
-                UIApplication.shared.canOpenURL(fbURL!)
-                
-            }
-            
-        }
+    @objc func newsimageTapped(gesture: UIGestureRecognizer) {
+    
+        performSegue(withIdentifier: "news", sender: self)
+
     }
     
     @objc func serviceimageTapped(gesture: UIGestureRecognizer) {
         // if the tapped view is a UIImageView then set it to imageview
-        if (gesture.view as? UIImageView) != nil {
-            print("Image Tapped")
-            //Here you can initiate your new ViewController
-            
-            let fbURL=URL(string: "https://www.behance.net/3boxsafb7d")
-            
-            if (UIApplication.shared.canOpenURL(fbURL!)){
-                //FB INSTALL
-                UIApplication.shared.open(fbURL!)
-            }else{
-                UIApplication.shared.canOpenURL(fbURL!)
-                
-            }
-            
-            
-            
-            
-        }
+        performSegue(withIdentifier: "service", sender: self)
+
     }
     
     @objc func workimageTapped(gesture: UIGestureRecognizer) {
         // if the tapped view is a UIImageView then set it to imageview
-        if (gesture.view as? UIImageView) != nil {
-            print("Image Tapped")
-            //Here you can initiate your new ViewController
-            
-            
-            
-            //https://www.3boxhost.com
-            let fbURL=URL(string: "https://www.3boxhost.com")
-            
-            if (UIApplication.shared.canOpenURL(fbURL!)){
-                //FB INSTALL
-                UIApplication.shared.open(fbURL!)
-            }else{
-                UIApplication.shared.canOpenURL(fbURL!)
-                
-            }
-        }
+        performSegue(withIdentifier: "works", sender: self)
+
     }
     
     
     @objc func makeOrderimageTapped(gesture: UIGestureRecognizer) {
         // if the tapped view is a UIImageView then set it to imageview
-        if (gesture.view as? UIImageView) != nil {
-            print("Image Tapped")
-            //Here you can initiate your new ViewController
-            
-            
-            
-            //https://www.3boxhost.com
-            let fbURL=URL(string: "https://www.3boxhost.com")
-            
-            if (UIApplication.shared.canOpenURL(fbURL!)){
-                //FB INSTALL
-                UIApplication.shared.open(fbURL!)
-            }else{
-                UIApplication.shared.canOpenURL(fbURL!)
-                
-            }
-        }
+        performSegue(withIdentifier: "order", sender: self)
+
     }
     
     
     @objc func teamimageTapped(gesture: UIGestureRecognizer) {
         // if the tapped view is a UIImageView then set it to imageview
-        if (gesture.view as? UIImageView) != nil {
-            print("Image Tapped")
-            //Here you can initiate your new ViewController
-            
-            
-            
-            //https://www.3boxhost.com
-            let fbURL=URL(string: "https://www.3boxhost.com")
-            
-            if (UIApplication.shared.canOpenURL(fbURL!)){
-                //FB INSTALL
-                UIApplication.shared.open(fbURL!)
-            }else{
-                UIApplication.shared.canOpenURL(fbURL!)
-                
-            }
-        }
+        performSegue(withIdentifier: "team", sender: self)
+
     }
 }
 
