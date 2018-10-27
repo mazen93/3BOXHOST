@@ -192,7 +192,7 @@ class ZoomInAnimator: ZoomAnimator, UIViewControllerAnimatedTransitioning {
         let transitionBackgroundView = UIView(frame: containerView.frame)
         transitionBackgroundView.backgroundColor = toViewController.backgroundColor
         containerView.addSubview(transitionBackgroundView)
-        containerView.sendSubviewToBack(transitionBackgroundView)
+        containerView.sendSubview(toBack: transitionBackgroundView)
 
         let finalFrame = toViewController.view.frame
 
@@ -270,7 +270,7 @@ class ZoomOutAnimator: ZoomAnimator, UIViewControllerAnimatedTransitioning {
         toViewController.view.frame = transitionContext.finalFrame(for: toViewController)
         toViewController.view.alpha = 0
         containerView.addSubview(toViewController.view)
-        containerView.sendSubviewToBack(toViewController.view)
+        containerView.sendSubview(toBack: toViewController.view)
 
         var transitionViewInitialFrame: CGRect
         if let currentSlideshowItem = fromViewController.slideshow.currentSlideshowItem {
@@ -307,7 +307,7 @@ class ZoomOutAnimator: ZoomAnimator, UIViewControllerAnimatedTransitioning {
         let transitionBackgroundView = UIView(frame: containerView.frame)
         transitionBackgroundView.backgroundColor = fromViewController.backgroundColor
         containerView.addSubview(transitionBackgroundView)
-        containerView.sendSubviewToBack(transitionBackgroundView)
+        containerView.sendSubview(toBack: transitionBackgroundView)
 
         let transitionView: UIImageView = UIImageView(image: fromViewController.slideshow.currentSlideshowItem?.imageView.image)
         transitionView.contentMode = UIView.ContentMode.scaleAspectFill

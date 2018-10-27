@@ -16,7 +16,7 @@ class CollectionCell: UICollectionViewCell {
     var delegate:toOrder?
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var title: UILabel!
-    @IBOutlet weak var details: UITextView!
+    @IBOutlet weak var details: UILabel!
     @IBOutlet weak var orderButton: UIButton!
     
     

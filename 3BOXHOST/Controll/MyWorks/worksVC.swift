@@ -32,8 +32,10 @@ class worksVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-        
+        self.title=NSLocalizedString("PORTFOLIO", comment: "PORTFOLIO")
+//        navigationController?.navigationBar.barTintColor = UIColor.red
+//        navigationController?.navigationBar.tintColor=UIColor.white
+      //  navigationController?.title=NSLocalizedString("PORTFOLIO", comment: "PORTFOLIO")
         collection.dataSource=self
         collection.delegate=self
         loadData()
@@ -45,21 +47,27 @@ class worksVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
     
     func loadData()  {
     
+        let wesm=worksModel(photo:"WESM", url: "https://www.behance.net/gallery/70014437/_")
         
+        self.array.append(wesm)
+        
+        let Real=worksModel(photo:"REALVALUE", url: "https://www.behance.net/gallery/70014131/_")
+        
+        self.array.append(Real)
         
         let mdars=worksModel(photo:"mdars", url: "https://www.behance.net/gallery/70037291/_")
         
         self.array.append(mdars)
         
-        let asyoti=worksModel(photo:"mdars", url: "https://www.behance.net/gallery/69997545/-2018")
+        let asyoti=worksModel(photo:"asyoti", url: "https://www.behance.net/gallery/69997545/-2018")
         
         self.array.append(asyoti)
         
-        let zahra=worksModel(photo:"quran", url: "https://www.behance.net/gallery/70001253/Zahrat-Al-rawdah-Pharmacies")
+        let zahra=worksModel(photo:"zahra", url: "https://www.behance.net/gallery/70001253/Zahrat-Al-rawdah-Pharmacies")
         
         self.array.append(zahra)
         
-        let farm=worksModel(photo:"quran", url: "https://www.behance.net/gallery/69997165/DoxPharma")
+        let farm=worksModel(photo:"farm", url: "https://www.behance.net/gallery/69997165/DoxPharma")
         
         self.array.append(farm)
         
@@ -101,14 +109,28 @@ class worksVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return array.count
     }
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let url=array[indexPath.row].url
+        print("url is \(url!)")
+        let fbURL=URL(string: url!)
+        
+        if (UIApplication.shared.canOpenURL(fbURL!)){
+            //FB INSTALL
+            UIApplication.shared.open(fbURL!)
+        }else{
+            UIApplication.shared.canOpenURL(fbURL!)
+            
+        }
+        
+    }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         
         let cell=collectionView.dequeueReusableCell(withReuseIdentifier: "worksCell", for: indexPath) as! worksCell
         
         
-        cell.contentView.layer.cornerRadius = 2.0
+        cell.contentView.layer.cornerRadius = 10.0
         cell.contentView.layer.borderWidth = 1.0
         cell.contentView.layer.borderColor = UIColor.clear.cgColor
         cell.contentView.layer.masksToBounds = true

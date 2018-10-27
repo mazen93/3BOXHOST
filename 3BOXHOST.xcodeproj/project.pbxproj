@@ -28,6 +28,7 @@
 		049ABB692167F48D00CFF81F /* newsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049ABB682167F48D00CFF81F /* newsCell.swift */; };
 		049ABB6D2167FAF200CFF81F /* NewsDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049ABB6C2167FAF200CFF81F /* NewsDetailsVC.swift */; };
 		04A73A9E21610B4500E83912 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A73A9C21610B4500E83912 /* SWRevealViewController.m */; };
+		04B5AD2321837BDF0085A8F8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04B5AD2221837BDF0085A8F8 /* GoogleService-Info.plist */; };
 		04CD82F8217A61270027DC01 /* ServiceDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CD82F7217A61270027DC01 /* ServiceDetailsVC.swift */; };
 		04CD82FC217A63AF0027DC01 /* ServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CD82FB217A63AF0027DC01 /* ServiceModel.swift */; };
 		04F158F7215FC1DC007BE6BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F158F6215FC1DC007BE6BE /* AppDelegate.swift */; };
@@ -65,6 +66,7 @@
 		04A73A9B21610B4400E83912 /* 3BOXHOST-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "3BOXHOST-Bridging-Header.h"; sourceTree = "<group>"; };
 		04A73A9C21610B4500E83912 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		04A73A9D21610B4500E83912 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		04B5AD2221837BDF0085A8F8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		04CD82F7217A61270027DC01 /* ServiceDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailsVC.swift; sourceTree = "<group>"; };
 		04CD82FB217A63AF0027DC01 /* ServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceModel.swift; sourceTree = "<group>"; };
 		04F158F3215FC1DC007BE6BE /* 3BOXHOST.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 3BOXHOST.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -180,6 +182,7 @@
 		04F158F5215FC1DC007BE6BE /* 3BOXHOST */ = {
 			isa = PBXGroup;
 			children = (
+				04B5AD2221837BDF0085A8F8 /* GoogleService-Info.plist */,
 				0415E9F32167DDED0042AFD9 /* View */,
 				0415E9F02167DCFA0042AFD9 /* Model */,
 				041F384E21675948004BA07E /* Controll */,
@@ -314,6 +317,7 @@
 				04F15901215FC1DE007BE6BE /* LaunchScreen.storyboard in Resources */,
 				04F158FE215FC1DE007BE6BE /* Assets.xcassets in Resources */,
 				04F158FC215FC1DC007BE6BE /* Main.storyboard in Resources */,
+				04B5AD2321837BDF0085A8F8 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,15 +331,21 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-3BOXHOST/Pods-3BOXHOST-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyAvatar/SwiftyAvatar.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageSlideshow.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyAvatar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

@@ -58,7 +58,7 @@ open class DefaultActivityIndicator: ActivityIndicatorFactory {
 
     /// create ActivityIndicatorView instance
     open func create() -> ActivityIndicatorView {
-        let activityIndicator = UIActivityIndicatorView(style: style)
+        let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: style)
         activityIndicator.color = color
         activityIndicator.hidesWhenStopped = true
 

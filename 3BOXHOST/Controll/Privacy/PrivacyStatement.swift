@@ -24,7 +24,7 @@ class PrivacyStatement: UIViewController,WKNavigationDelegate {
         
         
         
-        
+
         
         BackgroundProcess()
         //self.loadWebView()
@@ -42,7 +42,7 @@ class PrivacyStatement: UIViewController,WKNavigationDelegate {
     }
     
     func setupView()  {
-        self.navigationItem.title="اتصل بنا"
+        self.navigationItem.title=NSLocalizedString("PRIVACY", comment: "PRIVACY")
         //        self.navigationItem.backBarButtonItem=UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
         //        self.navigationController?.navigationBar.tintColor=UIColor.white
     }

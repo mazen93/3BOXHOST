@@ -14,6 +14,7 @@ class HomeVC: UIViewController {
  
 
  
+    @IBOutlet weak var logoView: UIView!
     
     @IBOutlet weak var about: UIImageView!
     @IBOutlet weak var service: UIImageView!
@@ -29,6 +30,12 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         ImageClickabe()
+        
+        
+        logoView.layer.cornerRadius=5
+        logoView.layer.borderWidth=1
+        logoView.layer.borderColor=UIColor.lightGray.cgColor 
+        logoView.layer.masksToBounds=true
         
     }
     
@@ -153,6 +160,24 @@ class HomeVC: UIViewController {
         // if the tapped view is a UIImageView then set it to imageview
         performSegue(withIdentifier: "team", sender: self)
 
+    }
+    
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // Hide the navigation bar on the this view controller
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        // Show the navigation bar on other view controllers
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+        
+        
     }
 }
 

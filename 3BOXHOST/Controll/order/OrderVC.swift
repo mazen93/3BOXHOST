@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Firebase
 class OrderVC: UIViewController,UITextFieldDelegate {
 
     @IBOutlet weak var moreDetails: UITextField!
@@ -19,7 +19,7 @@ class OrderVC: UIViewController,UITextFieldDelegate {
    
     var activetextfeildLogin : UITextField!
     var activetextfeild : UITextField!
-    
+    var ref: DatabaseReference!
     
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -34,10 +34,15 @@ class OrderVC: UIViewController,UITextFieldDelegate {
     // return KeyBoard
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        email.resignFirstResponder()
+       // email.resignFirstResponder()
+      // email
        /// passwordTF.resignFirstResponder()
         
-        return true
+        //return true
+        
+        
+        self.view.endEditing(true)
+        return false
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -46,11 +51,19 @@ class OrderVC: UIViewController,UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+
         
+        
+        self.title=NSLocalizedString("REQUEST SERVICE", comment: "REQUEST SERVICE")
+        ref = Database.database().reference()
       //  NotificationCenter.default.addObserver(self, selector: #selector(OrderVC.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
       //  NotificationCenter.default.addObserver(self, selector: #selector(OrderVC.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
       
-        
+        email.delegate=self
+        moreDetails.delegate=self
+        companyName.delegate=self
+        clientName.delegate=self
+        typeOfService.delegate=self
         
         let tap=UITapGestureRecognizer(target: self, action: #selector(didTapView(gesture:)))
         view.addGestureRecognizer(tap)
@@ -81,6 +94,59 @@ class OrderVC: UIViewController,UITextFieldDelegate {
     
     @IBAction func sendButton(_ sender: Any) {
         
+        guard !email.text!.isEmpty  else {
+            return
+        }
+        guard  !phone.text!.isEmpty  else {
+            return
+        }
+        
+        let providerEmailAdress = email.text
+        
+        let  isemailAddresValid = isValidEmailAddress(emailAddressString: providerEmailAdress!)
+        
+        if isemailAddresValid
+        {
+            print("Email is valid")
+            
+             print("not Empty")
+            
+            let name=clientName.text!
+            let details=moreDetails.text!
+            let emaiil=email.text!
+            let number=phone.text!
+            let service=typeOfService.text!
+            let company=companyName.text!
+            
+            
+            
+            
+           
+            let post = [
+                        "name": name,
+                        "details": details,
+                        "email": emaiil,
+                        "phone": number,
+                        "companyName":company,
+                        "service":service
+           
+            ]
+            
+            ref.child("posts").childByAutoId().setValue(post)
+            
+            
+            
+            
+            
+        } else {
+            print("Email is not valid")
+            //displayAlertmessage(messagetodisplay: "Email is not valid")
+        }
+        
+        
+       
+        
+        
         
     }
     
@@ -104,7 +170,28 @@ class OrderVC: UIViewController,UITextFieldDelegate {
      func keyboardWillHide(notification: NSNotification) {
        scrollView.contentInset=UIEdgeInsets.zero
     }
-    
+    func isValidEmailAddress(emailAddressString: String) -> Bool {
+        
+        var returnValue = true
+        let emailRegEx = "[A-Z0-9a-z.-_]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,3}"
+        
+        do {
+            let regex = try NSRegularExpression(pattern: emailRegEx)
+            let nsString = emailAddressString as NSString
+            let results = regex.matches(in: emailAddressString, range: NSRange(location: 0, length: nsString.length))
+            
+            if results.count == 0
+            {
+                returnValue = false
+            }
+            
+        } catch let error as NSError {
+            print("invalid regex: \(error.localizedDescription)")
+            returnValue = false
+        }
+        
+        return  returnValue
+    }
     
     
 }

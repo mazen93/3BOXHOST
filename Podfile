@@ -9,4 +9,6 @@ target '3BOXHOST' do
 pod 'SDWebImage', '~> 4.0'
 pod 'SwiftyAvatar', '~> 1.1'
 pod 'ImageSlideshow', '~> 1.6'
+pod 'Firebase/Core'
+pod 'Firebase/Database'
 end

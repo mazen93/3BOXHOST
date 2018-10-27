@@ -37,7 +37,7 @@ class NewsVC: UIViewController ,UICollectionViewDelegate,UICollectionViewDataSou
     func loadData()  {
         
         
-        let u=newsModel(photo:"https://3boxhost.com/public/upload/posts/blog/1124_630_1514650696_%D9%85%D8%A7_%D9%85%D8%B9%D9%86%D9%89_%D8%AC%D9%88%D8%AC%D9%84.jpg", title: "9 تطبيقات رائعة أطلقتها جوجل في عام ٢٠١٧.. تعرف عليها",details: details)
+        let u=newsModel(photo:"https://3boxhost.com/public/upload/posts/blog/1124_630_1514650696_%D9%85%D8%A7_%D9%85%D8%B9%D9%86%D9%89_%D8%AC%D9%88%D8%AC%D9%84.jpg", title: "9 Great Apps Launched by Google in 2017 .. Know It",details: details)
         
         self.array.append(u)
         

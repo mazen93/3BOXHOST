@@ -22,7 +22,7 @@ class TermAndCondition: UIViewController ,WKNavigationDelegate {
         super.viewDidLoad()
         
         
-        
+
         
         
         BackgroundProcess()
@@ -41,7 +41,7 @@ class TermAndCondition: UIViewController ,WKNavigationDelegate {
     }
     
     func setupView()  {
-        self.navigationItem.title="اتصل بنا"
+        self.navigationItem.title=NSLocalizedString("CONDITION", comment: "CONDITION")
         //        self.navigationItem.backBarButtonItem=UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
         //        self.navigationController?.navigationBar.tintColor=UIColor.white
     }

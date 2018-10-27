@@ -42,12 +42,6 @@ class TeamVC: UIViewController {
     
     
 
-    @IBOutlet weak var linkedInImage: UIImageView!
-    @IBOutlet weak var linkedInImage1: UIImageView!
-    @IBOutlet weak var linkedInImage2: UIImageView!
-    @IBOutlet weak var linkedInImage3: UIImageView!
-    @IBOutlet weak var linkedInImage4: UIImageView!
-    @IBOutlet weak var linkedInImage5: UIImageView!
     
     
     @IBOutlet weak var behanceImage: UIImageView!
@@ -73,37 +67,7 @@ class TeamVC: UIViewController {
     
     
     func imageClickable() {
-        // linked
-        let tGesture = UITapGestureRecognizer(target: self, action: #selector(CallUsVC.linkedimageTapped(gesture:)))
-        
-        linkedInImage.addGestureRecognizer(tGesture)
-        linkedInImage.isUserInteractionEnabled = true
-        let tGesture1 = UITapGestureRecognizer(target: self, action: #selector(CallUsVC.linkedimageTapped(gesture:)))
-        
-        linkedInImage1.addGestureRecognizer(tGesture1)
-        linkedInImage1.isUserInteractionEnabled = true
-        
-        
-        let tGesture2 = UITapGestureRecognizer(target: self, action: #selector(CallUsVC.linkedimageTapped(gesture:)))
-        
-        linkedInImage2.addGestureRecognizer(tGesture2)
-        linkedInImage2.isUserInteractionEnabled = true
-        
-        let tGesture3 = UITapGestureRecognizer(target: self, action: #selector(CallUsVC.linkedimageTapped(gesture:)))
-        
-        linkedInImage3.addGestureRecognizer(tGesture3)
-        linkedInImage3.isUserInteractionEnabled = true
-        
-        
-        let tGesture4 = UITapGestureRecognizer(target: self, action: #selector(CallUsVC.linkedimageTapped(gesture:)))
-        
-        linkedInImage4.addGestureRecognizer(tGesture4)
-        linkedInImage4.isUserInteractionEnabled = true
-        
-        let tGesture5 = UITapGestureRecognizer(target: self, action: #selector(CallUsVC.linkedimageTapped(gesture:)))
-        
-        linkedInImage5.addGestureRecognizer(tGesture5)
-        linkedInImage5.isUserInteractionEnabled = true
+     
       
         
         
