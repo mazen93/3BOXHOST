@@ -83,7 +83,7 @@ class CallUsVC: UIViewController {
         if (gesture.view as? UIImageView) != nil {
             print("Image Tapped")
             //Here you can initiate your new ViewController
-            let fbURL=URL(string: "https://www.facebook.com/3boxhost")
+            let fbURL=URL(string: "https://www.youtube.com/channel/UCef_X-q7E7XiKfrqRqLVVNQ")
             
             if (UIApplication.shared.canOpenURL(fbURL!)){
                 //FB INSTALL
@@ -159,7 +159,7 @@ class CallUsVC: UIViewController {
             //Here you can initiate your new ViewController
             
             
-            let fbURL=URL(string: "https://www.youtube.com/channel/UCef_X-q7E7XiKfrqRqLVVNQ")
+            let fbURL=URL(string: "https://www.instagram.com/3boxhost/")
             
             
                     if (UIApplication.shared.canOpenURL(fbURL!)){
