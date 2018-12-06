@@ -8,7 +8,8 @@ target '3BOXHOST' do
   # Pods for 3BOXHOST
 pod 'SDWebImage', '~> 4.0'
 pod 'SwiftyAvatar', '~> 1.1'
-pod 'ImageSlideshow', '~> 1.6'
-pod 'Firebase/Core'
-pod 'Firebase/Database'
+pod 'Kingfisher'
+pod 'Alamofire', '~> 4.7'
+pod 'SwiftyJSON', '~> 4.0'
+pod 'ReachabilitySwift'
 end

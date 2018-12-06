@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Firebase
+
 class OrderVC: UIViewController,UITextFieldDelegate {
 
     @IBOutlet weak var moreDetails: UITextField!
@@ -19,7 +19,7 @@ class OrderVC: UIViewController,UITextFieldDelegate {
    
     var activetextfeildLogin : UITextField!
     var activetextfeild : UITextField!
-    var ref: DatabaseReference!
+    
     
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -55,7 +55,7 @@ class OrderVC: UIViewController,UITextFieldDelegate {
         
         
         self.title=NSLocalizedString("REQUEST SERVICE", comment: "REQUEST SERVICE")
-        ref = Database.database().reference()
+        
       //  NotificationCenter.default.addObserver(self, selector: #selector(OrderVC.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
       //  NotificationCenter.default.addObserver(self, selector: #selector(OrderVC.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
       
@@ -132,7 +132,7 @@ class OrderVC: UIViewController,UITextFieldDelegate {
            
             ]
             
-            ref.child("posts").childByAutoId().setValue(post)
+           
             
             
             

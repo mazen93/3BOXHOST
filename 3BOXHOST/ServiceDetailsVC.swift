@@ -32,6 +32,12 @@ class ServiceDetailsVC: UIViewController {
 
         // Do any additional setup after loading the view.
         
+        
+        
+        
+        
+        
+    
         newsPhoto.sd_setImage(with: URL(string:((details?.photo!)!)), placeholderImage: UIImage(named: "layer8"))
         
         

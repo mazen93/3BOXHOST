@@ -7,8 +7,16 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
-class worksVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource ,seeProject{
+class worksVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource ,UICollectionViewDelegateFlowLayout,seeProject{
+    
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = (view.frame.width - 20) / 2.0
+        return CGSize(width: width, height: width)
+    }
     func ProjectURL(url: String) {
         print("url is \(url)")
         let fbURL=URL(string: url)
@@ -33,9 +41,7 @@ class worksVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
         super.viewDidLoad()
 
         self.title=NSLocalizedString("PORTFOLIO", comment: "PORTFOLIO")
-//        navigationController?.navigationBar.barTintColor = UIColor.red
-//        navigationController?.navigationBar.tintColor=UIColor.white
-      //  navigationController?.title=NSLocalizedString("PORTFOLIO", comment: "PORTFOLIO")
+
         collection.dataSource=self
         collection.delegate=self
         loadData()
@@ -43,67 +49,108 @@ class worksVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
     }
 
     
-    
+    func alertAction(title:String,message:String)  {
+        
+        // create the alert
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        
+        let ok=NSLocalizedString("OK", comment: "OK")
+        
+        let okAction = UIAlertAction(title: ok, style: UIAlertAction.Style.default) {
+            UIAlertAction in
+            NSLog("OK Pressed")
+        }
+        // add an action (button)
+        alert.addAction(okAction)
+        
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
+    }
     
     func loadData()  {
-    
-        let wesm=worksModel(photo:"WESM", url: "https://www.behance.net/gallery/70014437/_")
-        
-        self.array.append(wesm)
-        
-        let Real=worksModel(photo:"REALVALUE", url: "https://www.behance.net/gallery/70014131/_")
-        
-        self.array.append(Real)
-        
-        let mdars=worksModel(photo:"mdars", url: "https://www.behance.net/gallery/70037291/_")
-        
-        self.array.append(mdars)
-        
-        let asyoti=worksModel(photo:"asyoti", url: "https://www.behance.net/gallery/69997545/-2018")
-        
-        self.array.append(asyoti)
-        
-        let zahra=worksModel(photo:"zahra", url: "https://www.behance.net/gallery/70001253/Zahrat-Al-rawdah-Pharmacies")
-        
-        self.array.append(zahra)
-        
-        let farm=worksModel(photo:"farm", url: "https://www.behance.net/gallery/69997165/DoxPharma")
-        
-        self.array.append(farm)
         
         
+     
+        let lang=Bundle.main.preferredLocalizations.first!
+        let url="https://www.3boxhost.com/api/portfolio"
         
         
-
-        let u=worksModel(photo:"quran", url: "https://www.behance.net/gallery/71573627/_")
-        
-        self.array.append(u)
+       
         
         
-        let ui=worksModel(photo:"egy",  url: "https://www.behance.net/gallery/71573953/EGYTOWN")
-        self.array.append(ui)
-        
-        let ue=worksModel(photo:"techno",  url: "https://www.behance.net/gallery/71574149/_")
-        
-        self.array.append(ue)
+        let headers = [
+            
+            "language":lang
+        ]
         
         
+        Alamofire.request(url, method: .get, encoding: URLEncoding.default, headers: headers)
+            .responseJSON {
+                
+                response in
+                //self.activityIndicator.stopAnimating()
+                switch response.result
+                {
+                case .failure(let error):
+                    
+                    print(error)
+                //    self.refresh.stopAnimating()
+                case .success(let value):
+                    // self.refresh.stopAnimating()
+                    let json = JSON(value)
+                    // print(json)
+                    
+                    
+                    
+                    let status=json["sucess"].bool
+                    print("status \(status!)")
+                    
+                    if status == false{
+                        
+                        
+                        let tiitle=NSLocalizedString("sorry", comment: "sorry")
+                        let message=NSLocalizedString("sorry there is no data ", comment: "no data")
+                        self.alertAction(title: tiitle, message: message)
+                        
+                        
+                        
+                    }else{
+                    
+                    
+                    
+                    if let dataArrr = json["data"].array
+                    {
+                        
+                        
+                        
+                            
+                            
+                            
+                            for dataArr in dataArrr {
+                               
+                                let name = dataArr ["name"].string
+                                let photo = dataArr ["photo"].string
+                                let link = dataArr ["link"].string
+                                
+                                
+                                
+                                
+                                
+                                let city=worksModel(photo: photo!, url: link!, name: name!)
+                                self.array.append(city)
+                            }
+                            
+                            self.collection.reloadData()
+                            
+                            
+                        
+                    }
+                    
+                }
+        }
+        }
         
-        let ma=worksModel(photo:"bond",  url: "https://www.behance.net/gallery/71573291/_")
-        self.array.append(ma)
-        let uer=worksModel(photo:"food", url: "https://www.behance.net/gallery/71573773/Hot-food")
-        
-        self.array.append(uer)
-        let r=worksModel(photo:"windos", url: "https://www.behance.net/gallery/71574279/_")
-        
-        self.array.append(r)
-        
-        let new=worksModel(photo:"new", url: "https://www.behance.net/gallery/71573437/_")
-        
-        self.array.append(new)
-        let areen=worksModel(photo:"areen", url: "https://www.behance.net/gallery/71574009/_")
-        
-        self.array.append(areen)
+  
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

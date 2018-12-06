@@ -12,11 +12,12 @@ class newsModel {
     var photo:String!
     var title:String!
     var details:String!
-    
-    init(photo:String,title:String,details:String) {
+    var short:String!
+    init(photo:String,title:String,details:String,short:String) {
         self.photo=photo
         self.title=title
         self.details=details
+        self.short=short
     }
     
     

@@ -7,15 +7,17 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class NewsVC: UIViewController ,UICollectionViewDelegate,UICollectionViewDataSource,MoreDelegate {
     var name:String!
    
-    
-   
-   
-    
-    let details="أصدرت شركة جوجل تطبيق Google Tez  في دولة الهند وهو يعمل على نظام تشغيل الأندرويد، ونظام  تشغيل IOS، كما أنه يتيح لمستخدمي هذا التطبيق  دفع النقود مباشرةً إلى الحسابات، مما يلغي نظام التعامل بالمحافظ التقليدية، كما  أنه يدعم العديد من اللغات الإنجليزية، المهاراتية، الغوجاراتية، الكانادا، التاميلية، التيلجو، البنغالية، الهندية"
+ 
+    var pageNo:Int=1
+    var limit:Int=15
+    var totalPages:Int=1 //pageNo*limit
+    var totalItems:Int=1
     
     
     var array:[newsModel]=[]
@@ -29,35 +31,121 @@ class NewsVC: UIViewController ,UICollectionViewDelegate,UICollectionViewDataSou
         
         collection.dataSource=self
         collection.delegate=self
-        loadData()
+        loadData(pageNumber:pageNo)
         
     }
     
     
     
+    func alertAction(title:String,message:String)  {
+        
+        // create the alert
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        
+        let ok=NSLocalizedString("OK", comment: "OK")
+        
+        let okAction = UIAlertAction(title: ok, style: UIAlertAction.Style.default) {
+            UIAlertAction in
+            NSLog("OK Pressed")
+        }
+        // add an action (button)
+        alert.addAction(okAction)
+        
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
+    }
     
-    func loadData()  {
+    func loadData(pageNumber:Int)  {
+        let url="https://www.3boxhost.com/api/blog?page=\(pageNumber)"
+        let lang=Bundle.main.preferredLocalizations.first!
+        
+        let headers = [
+            
+            "language":lang
+        ]
         
         
-        let u=newsModel(photo:"https://3boxhost.com/public/upload/posts/blog/1124_630_1514650696_%D9%85%D8%A7_%D9%85%D8%B9%D9%86%D9%89_%D8%AC%D9%88%D8%AC%D9%84.jpg", title: "تفاصيل عن مصادر تَعلُم الموشن جرافيك",details: details)
-        
-        self.array.append(u)
-        
-        
-        let ui=newsModel(photo:"https://3boxhost.com/public/upload/posts/blog/1124_630_1514650696_%D9%85%D8%A7_%D9%85%D8%B9%D9%86%D9%89_%D8%AC%D9%88%D8%AC%D9%84.jpg", title: "9 أطلقتها جوجل في عام ٢٠١٧.. تعرف عليها",details: details)
-        self.array.append(ui)
-        
-        let ue=newsModel(photo:"https://3boxhost.com/public/upload/posts/blog/1124_630_1514650696_%D9%85%D8%A7_%D9%85%D8%B9%D9%86%D9%89_%D8%AC%D9%88%D8%AC%D9%84.jpg", title: "9 تطبيقات رائعة أطلقتها جوجل في عام  تعرف عليها",details: details)
-        
-        self.array.append(ue)
-        
-        
-        
-        let ma=newsModel(photo:"https://3boxhost.com/public/upload/posts/blog/1124_630_1514650696_%D9%85%D8%A7_%D9%85%D8%B9%D9%86%D9%89_%D8%AC%D9%88%D8%AC%D9%84.jpg", title: "9 تطبيقات رائعة أطلقتها جوجل في عام ٢٠١٧.. تعرف ",details: details)
-        self.array.append(ma)
-        let uer=newsModel(photo:"3box", title: "9 تطبيقات رائعة أطلقتها جوجل في عام ٢٠١٧.. تعرف عليها",details: details)
-        
-        self.array.append(uer)
+        Alamofire.request(url, method: .get, encoding: URLEncoding.default, headers: headers)
+            .responseJSON {
+                
+                response in
+                
+                switch response.result
+                {
+                case .failure(let error):
+                    
+                    print(error)
+              
+                case .success(let value):
+                   
+                    
+                    
+                    let json = JSON(value)
+                 print(json)
+                    
+                    
+                    let status=json["status"].bool
+                    print("status \(status!)")
+                    
+                    if status == false{
+                        
+                        
+                        let tiitle=NSLocalizedString("sorry", comment: "sorry")
+                        let message=NSLocalizedString("sorry there is no data ", comment: "no data")
+                        self.alertAction(title: tiitle, message: message)
+                        
+                        
+                        
+                    }else{
+                        let total_pages=json["posts"]["last_page"].int
+                        let current_page=json["posts"]["current_page"].int
+                        let total_items=json["posts"]["total"].int
+                        
+                        
+                        
+                        
+                        
+                        
+                        self.totalPages=total_pages!
+                        self.pageNo=current_page!
+                        self.totalItems=total_items!
+                        
+                        
+                        if let dataArrr = json["posts"]["data"].array
+                        {
+                            for dataArr in dataArrr {
+                                
+                                let name = dataArr ["name"].string
+                                let photo = dataArr ["upload"].string
+                                let short = dataArr ["short"].string
+                                
+                                let details = dataArr ["details"].string
+                                
+                                
+                                
+                                let city=newsModel(photo: photo!, title: name!, details: details!, short: short!)
+                                self.array.append(city)
+                            }
+                            
+                            self.collection.reloadData()
+                        }
+                        
+                        
+                    }
+                    
+                    
+                    
+                }
+                
+                
+                
+                
+                
+                
+                
+                
+                
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -100,13 +188,12 @@ class NewsVC: UIViewController ,UICollectionViewDelegate,UICollectionViewDataSou
   
     
     
-    func moreTapButton(title: String, details: String, photo: UIImage) {
+    func moreTapButton(title: String, details: String, photo: UIImage,short:String) {
         
         
         
         
-        print(details)
-        print(title)
+   
         let vc = storyboard?.instantiateViewController(withIdentifier: "NewsDetailsVC") as? NewsDetailsVC
         
         vc?.detailss=details
@@ -129,6 +216,27 @@ class NewsVC: UIViewController ,UICollectionViewDelegate,UICollectionViewDataSou
 //        self.navigationController?.pushViewController(vc!, animated: true)
 //        
 //    }
+    
+    
+    
+    
+    
+    
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        
+        if indexPath.row == array.count - 1 { //
+            print("will Display Cell Call \(array.count-1)  and index = \(indexPath.row)")
+            print("total items = \(totalItems)")
+            print("total pages = \(totalPages)")
+            print("current page = \(pageNo)")
+            
+            if array.count < totalItems && pageNo < totalPages {
+                pageNo += 1
+                loadData(pageNumber: pageNo)
+            }
+        }
+    }
     
     
 }
